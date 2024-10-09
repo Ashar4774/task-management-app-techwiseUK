@@ -20693,7 +20693,7 @@ __webpack_require__.r(__webpack_exports__);
         if (response.data.success) {
           _this.$store.dispatch('login', response.data.token);
           localStorage.setItem('token', response.data.token);
-          _this.$router.push('/dashboard');
+          _this.$router.push('/login');
           //window.location.href = "/login";
         } else {
           _this.error = response.data.message;
