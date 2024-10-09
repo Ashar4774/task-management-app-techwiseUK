@@ -88,7 +88,7 @@ export default {
                         if (response.data.success) {
                             this.$store.dispatch('login', response.data.token);
                             localStorage.setItem('token', response.data.token);
-                            this.$router.push('/dashboard');
+                            this.$router.push('/login');
                             //window.location.href = "/login";
                         } else {
                             this.error = response.data.message;
