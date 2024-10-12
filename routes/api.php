@@ -40,6 +40,10 @@ Route::middleware('auth:api')->group(function(){
 
 
 Route::get('/migrate', function () {
+    if (!defined('STDIN')) {
+        define('STDIN', fopen('php://stdin', 'r'));
+    }
+
     Artisan::call('migrate');
     return 'migrated successfully';
 });
