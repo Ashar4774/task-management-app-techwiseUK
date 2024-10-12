@@ -6,6 +6,7 @@ use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\TaskController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,7 @@ Route::middleware('auth:api')->group(function(){
 });
 
 
-
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+    return 'migrated successfully';
+});
