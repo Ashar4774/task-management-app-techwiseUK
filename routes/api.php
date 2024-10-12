@@ -47,3 +47,9 @@ Route::get('/migrate', function () {
     Artisan::call('migrate');
     return 'migrated successfully';
 });
+
+Route::get('/check_db_info', function(){
+    dump(env('DB_DATABASE'));
+    dump(env('DB_HOST'));
+    dump(env('DB_USERNAME'));
+});
